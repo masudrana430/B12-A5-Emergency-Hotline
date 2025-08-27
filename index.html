@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>emergency-Hotline</title>
+    <!-- daisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Tailwind v4 Play CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Hind Madurai -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- nav -->
+    <div
+      class="sticky top-0 z-50 bg-white shadow-sm flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between gap-2 p-4"
+    >
+      <!-- Left: logo + title -->
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <img
+          src="assets/logo.png"
+          alt=""
+          class="h-7 w-7 sm:h-9 sm:w-9 rounded-full"
+        />
+        <div
+          class="font-extrabold text-sm sm:text-base"
+          style="color: #006747; font-family: 'Hind Madurai', sans-serif"
+        >
+          Emergency <br />
+          Service
+        </div>
+      </div>
+      <!-- Right: badges + button -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <span
+          class="inline-flex items-center gap-1 rounded-full bg-[#41FF6B]/10 text-black px-2 py-1 text-xs sm:text-sm font-semibold font-['Hind_Madurai']"
+        >
+          <span id="likes-count">0</span><span aria-hidden="true">❤️</span>
+        </span>
+
+        <span
+          class="inline-flex items-center gap-1 rounded-full bg-[#41FF6B]/10 text-black px-2 py-1 text-xs sm:text-sm font-semibold font-['Hind_Madurai']"
+        >
+          <span id="coins-count">100</span><span aria-hidden="true">🪙</span>
+        </span>
+
+        <span
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-[#00A63E] text-white px-2 py-1 text-xs sm:text-sm font-semibold w-20"
+        >
+          <span id="copy-count">0</span><span aria-hidden="true">copy</span>
+        </span>
+      </div>
+    </div>
+    <!-- Emergency Service Directory banner -->
+    <div
+      class="w-full min-h-[239px] bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] text-white text-center flex flex-col items-center justify-center"
+    >
+      <div
+        class="mx-auto mt-5 h-16 w-16 sm:h-20 sm:w-20 rounded-full overflow-hidden flex items-center justify-center"
+      >
+        <img src="assets/logo-dark.png" alt="Emergency Service Directory" />
+      </div>
+      <div class="p-4">
+        <h2
+          class="font-bold text-white text-[40px] leading-normal tracking-normal text-center"
+          style="font-family: 'Hind Madurai', sans-serif"
+        >
+          Emergency Service Directory
+        </h2>
+        <p
+          class="mt-1 text-white font-semibold text-[20px] leading-normal tracking-normal"
+          style="font-family: 'Hind Madurai', sans-serif"
+        >
+          Government Emergency Services at Your Fingertip – A Project by
+          Government of the People’s Republic of Bangladesh
+        </p>
+      </div>
+    </div>
+    <!-- main -->
+    <main class="bg-[#F5FFF6]">
+      <section
+        id="service_container"
+        class="w-11/12 mx-auto py-8 sm:py-10 grid grid-cols-12 gap-6 lg:gap-8"
+      >
+        <!-- LEFT: cards area -->
+        <section id="service_box_left" class="col-span-12 lg:col-span-9">
+          <div
+            class="service_item_left grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6"
+          >
+            <!-- service card 1 -->
+            <article
+              class="card rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-5"
+            >
+              <div class="flex items-start justify-between">
+                <div
+                  class="bg-[#FFE3E2] h-16 w-16 grid place-items-center rounded-lg"
+                >
+                  <div class="grid h-10 w-10 place-items-center rounded-lg">
+                    <img src="assets/emergency.png" alt="Emergency Icon" />
+                  </div>
+                </div>
+
+                <button
+                  class="heart-btn grid h-10 w-10 place-items-center rounded-lg text-black"
+                >
+                  <span class="heart-icon text-[30px] leading-none">♡</span>
+                </button>
+              </div>
+              <h3
+                class="mt-3 font-bold"
+                style="
+                  font-family: 'Hind Madurai', sans-serif;
+                  font-size: 24px;
+                  color: rgba(17, 17, 17, 1);
+                "
+              >
+                National Emergency Number
+              </h3>
+              <p class="text-sm text-gray-500">National Emergency</p>
+              <div
+                class="service-number mt-3 text-3xl font-extrabold tracking-tight"
+                style="color: rgba(17, 17, 17, 1); font-size: 24px"
+              >
+                999
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full text-xs px-2 py-0.5"
+                  style="
+                    background-color: rgba(242, 242, 242, 1);
+                    color: rgba(92, 92, 92, 1);
+                  "
+                  >All</span
+                >
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <!-- copy button -->
+                <button
+                  class="copy-btn inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+                  style="color: rgba(92, 92, 92, 1)"
+                >
+                  ⧉ Copy
+                </button>
+                <a
+                  href="#"
+                  class="call-btn inline-flex items-center justify-center rounded-lg text-white px-3 py-2 text-sm font-medium hover:bg-[#059c3a]"
+                  style="background-color: rgba(0, 166, 62, 1)"
+                >
+                  <i class="fa-solid fa-phone mr-1"></i>
+
+                  Call
+                </a>
+              </div>
+            </article>
+            <!-- service card 2 -->
+            <article
+              class="card rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-5"
+            >
+              <div class="flex items-start justify-between">
+                <div
+                  class="bg-[#DFEFFF] h-16 w-16 grid place-items-center rounded-lg"
+                >
+                  <div class="grid h-10 w-10 place-items-center rounded-lg">
+                    <img src="assets/police.png" alt="police Icon" />
+                  </div>
+                </div>
+                <button
+                  class="heart-btn grid h-10 w-10 place-items-center rounded-lg text-black"
+                >
+                  <span class="heart-icon text-[30px] leading-none">♡</span>
+                </button>
+              </div>
+              <h3
+                class="mt-3 font-bold"
+                style="
+                  font-family: 'Hind Madurai', sans-serif;
+                  font-size: 24px;
+                  color: rgba(17, 17, 17, 1);
+                "
+              >
+                Police Helpline Number
+              </h3>
+              <p class="text-sm text-gray-500">Police</p>
+              <div
+                class="service-number mt-3 text-3xl font-extrabold tracking-tight"
+                style="color: rgba(17, 17, 17, 1); font-size: 24px"
+              >
+                999
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full text-xs px-2 py-0.5"
+                  style="
+                    background-color: rgba(242, 242, 242, 1);
+                    color: rgba(92, 92, 92, 1);
+                  "
+                  >police</span
+                >
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <button
+                  class="copy-btn inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+                  style="color: rgba(92, 92, 92, 1)"
+                >
+                  ⧉ Copy
+                </button>
+                <a
+                  href="#"
+                  class="call-btn cart-btn inline-flex items-center justify-center rounded-lg text-white px-3 py-2 text-sm font-medium hover:bg-[#059c3a]"
+                  style="background-color: rgba(0, 166, 62, 1)"
+                >
+                  <i class="fa-solid fa-phone mr-1"></i>
+
+                  Call
+                </a>
+              </div>
+            </article>
+            <!-- service card 3 -->
+            <article
+              class="card rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-5"
+            >
+              <div class="flex items-start justify-between">
+                <div
+                  class="bg-[#FFE3E2] h-16 w-16 grid place-items-center rounded-lg"
+                >
+                  <div class="grid h-10 w-10 place-items-center rounded-lg">
+                    <img src="assets/fire-service.png" alt="Emergency Icon" />
+                  </div>
+                </div>
+                <button
+                  class="heart-btn grid h-10 w-10 place-items-center rounded-lg text-black"
+                >
+                  <span class="heart-icon text-[30px] leading-none">♡</span>
+                </button>
+              </div>
+              <h3
+                class="mt-3 font-bold"
+                style="
+                  font-family: 'Hind Madurai', sans-serif;
+                  font-size: 24px;
+                  color: rgba(17, 17, 17, 1);
+                "
+              >
+                Fire Service
+              </h3>
+              <p class="text-sm text-gray-500">National Emergency</p>
+              <div
+                class="service-number mt-3 text-3xl font-extrabold tracking-tight"
+                style="color: rgba(17, 17, 17, 1); font-size: 24px"
+              >
+                999
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full text-xs px-2 py-0.5"
+                  style="
+                    background-color: rgba(242, 242, 242, 1);
+                    color: rgba(92, 92, 92, 1);
+                  "
+                  >Fire</span
+                >
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <button
+                  class="copy-btn inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+                  style="color: rgba(92, 92, 92, 1)"
+                >
+                  ⧉ Copy
+                </button>
+                <a
+                  href="#"
+                  class="call-btn inline-flex items-center justify-center rounded-lg text-white px-3 py-2 text-sm font-medium hover:bg-[#059c3a]"
+                  style="background-color: rgba(0, 166, 62, 1)"
+                >
+                  <i class="fa-solid fa-phone mr-1"></i>
+
+                  Call
+                </a>
+              </div>
+            </article>
+            <!-- service card 4 -->
+            <article
+              class="card rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-5"
+            >
+              <div class="flex items-start justify-between">
+                <div
+                  class="bg-[#FFE3E2] h-16 w-16 grid place-items-center rounded-lg"
+                >
+                  <div class="grid h-10 w-10 place-items-center rounded-lg">
+                    <img src="assets/ambulance.png" alt="Emergency Icon" />
+                  </div>
+                </div>
+                <button
+                  class="heart-btn grid h-10 w-10 place-items-center rounded-lg text-black"
+                >
+                  <span class="heart-icon text-[30px] leading-none">♡</span>
+                </button>
+              </div>
+              <h3
+                class="mt-3 font-bold"
+                style="
+                  font-family: 'Hind Madurai', sans-serif;
+                  font-size: 24px;
+                  color: rgba(17, 17, 17, 1);
+                "
+              >
+                Ambulance Service
+              </h3>
+              <p class="text-sm text-gray-500">Ambulance</p>
+              <div
+                class="service-number mt-3 text-3xl font-extrabold tracking-tight"
+                style="color: rgba(17, 17, 17, 1); font-size: 24px"
+              >
+                1994-999999
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full text-xs px-2 py-0.5"
+                  style="
+                    background-color: rgba(242, 242, 242, 1);
+                    color: rgba(92, 92, 92, 1);
+                  "
+                  >Health</span
+                >
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <button
+                  class="copy-btn inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+                  style="color: rgba(92, 92, 92, 1)"
+                >
+                  ⧉ Copy
+                </button>
+                <a
+                  href="#"
+                  class="call-btn inline-flex items-center justify-center rounded-lg text-white px-3 py-2 text-sm font-medium hover:bg-[#059c3a]"
+                  style="background-color: rgba(0, 166, 62, 1)"
+                >
+                  <i class="fa-solid fa-phone mr-1"></i>
+
+                  Call
+                </a>
+              </div>
+            </article>
+            <!-- service card 5 -->
+            <article
+              class="card rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-5"
+            >
+              <div class="flex items-start justify-between">
+                <div
+                  class="bg-[#FFE3E2] h-16 w-16 grid place-items-center rounded-lg"
+                >
+                  <div class="grid h-10 w-10 place-items-center rounded-lg">
+                    <img src="https://cdn-icons-png.freepik.com/256/18799/18799585.png
+                    " alt="Emergency Icon" />
+                  </div>
+                </div>
+                <button
+                  class="heart-btn grid h-10 w-10 place-items-center rounded-lg text-black"
+                >
+                  <span class="heart-icon text-[30px] leading-none">♡</span>
+                </button>
+              </div>
+              <h3
+                class="mt-3 font-bold"
+                style="
+                  font-family: 'Hind Madurai', sans-serif;
+                  font-size: 24px;
+                  color: rgba(17, 17, 17, 1);
+                "
+              >
+                Women & Child Helpline
+              </h3>
+              <p class="text-sm text-gray-500">Women & Child Helpline</p>
+              <div
+                class="service-number mt-3 text-3xl font-extrabold tracking-tight"
+                style="color: rgba(17, 17, 17, 1); font-size: 24px"
+              >
+                109
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full text-xs px-2 py-0.5"
+                  style="
+                    background-color: rgba(242, 242, 242, 1);
+                    color: rgba(92, 92, 92, 1);
+                  "
+                  >Help</span
+                >
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <button
+                  class="copy-btn inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+                  style="color: rgba(92, 92, 92, 1)"
+                >
+                  ⧉ Copy
+                </button>
+                <a
+                  href="#"
+                  class="call-btn inline-flex items-center justify-center rounded-lg text-white px-3 py-2 text-sm font-medium hover:bg-[#059c3a]"
+                  style="background-color: rgba(0, 166, 62, 1)"
+                >
+                  <i class="fa-solid fa-phone mr-1"></i>
+
+                  Call
+                </a>
+              </div>
+            </article>
+            <!-- service card 6 -->
+            <article
+              class="card rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-5"
+            >
+              <div class="flex items-start justify-between">
+                <div
+                  class="bg-[#FFE3E2] h-16 w-16 grid place-items-center rounded-lg"
+                >
+                  <div class="grid h-10 w-10 place-items-center rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/512/13080/13080071.png" alt="Emergency Icon" />
+                  </div>
+                </div>
+                <button
+                  class="heart-btn grid h-10 w-10 place-items-center rounded-lg text-black"
+                >
+                  <span class="heart-icon text-[30px] leading-none">♡</span>
+                </button>
+              </div>
+              <h3
+                class="mt-3 font-bold"
+                style="
+                  font-family: 'Hind Madurai', sans-serif;
+                  font-size: 24px;
+                  color: rgba(17, 17, 17, 1);
+                "
+              >
+                Anti-Corruption Helpline
+              </h3>
+              <p class="text-sm text-gray-500">Anti-Corruption</p>
+              <div
+                class="service-number mt-3 text-3xl font-extrabold tracking-tight"
+                style="color: rgba(17, 17, 17, 1); font-size: 24px"
+              >
+                106
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full text-xs px-2 py-0.5"
+                  style="
+                    background-color: rgba(242, 242, 242, 1);
+                    color: rgba(92, 92, 92, 1);
+                  "
+                  >Govt.</span
+                >
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <button
+                  class="copy-btn inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+                  style="color: rgba(92, 92, 92, 1)"
+                >
+                  ⧉ Copy
+                </button>
+                <a
+                  href="#"
+                  class="call-btn inline-flex items-center justify-center rounded-lg text-white px-3 py-2 text-sm font-medium hover:bg-[#059c3a]"
+                  style="background-color: rgba(0, 166, 62, 1)"
+                >
+                  <i class="fa-solid fa-phone mr-1"></i>
+
+                  Call
+                </a>
+              </div>
+            </article>
+            <!-- service card 7 -->
+            <article
+              class="card rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-5"
+            >
+              <div class="flex items-start justify-between">
+                <div
+                  class="bg-[#FFE3E2] h-16 w-16 grid place-items-center rounded-lg"
+                >
+                  <div class="grid h-10 w-10 place-items-center rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3222/3222000.png" alt="Emergency Icon" />
+                  </div>
+                </div>
+                <button
+                  class="heart-btn grid h-10 w-10 place-items-center rounded-lg text-black"
+                >
+                  <span class="heart-icon text-[30px] leading-none">♡</span>
+                </button>
+              </div>
+              <h3
+                class="mt-3 font-bold"
+                style="
+                  font-family: 'Hind Madurai', sans-serif;
+                  font-size: 24px;
+                  color: rgba(17, 17, 17, 1);
+                "
+              >
+                Electricity Helpline
+              </h3>
+              <p class="text-sm text-gray-500">Electricity Outage</p>
+              <div
+                class="service-number mt-3 text-3xl font-extrabold tracking-tight"
+                style="color: rgba(17, 17, 17, 1); font-size: 24px"
+              >
+                16216
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full text-xs px-2 py-0.5"
+                  style="
+                    background-color: rgba(242, 242, 242, 1);
+                    color: rgba(92, 92, 92, 1);
+                  "
+                  >Electricity</span
+                >
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <button
+                  class="copy-btn inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+                  style="color: rgba(92, 92, 92, 1)"
+                >
+                  ⧉ Copy
+                </button>
+                <a
+                  href="#"
+                  class="call-btn inline-flex items-center justify-center rounded-lg text-white px-3 py-2 text-sm font-medium hover:bg-[#059c3a]"
+                  style="background-color: rgba(0, 166, 62, 1)"
+                >
+                  <i class="fa-solid fa-phone mr-1"></i>
+
+                  Call
+                </a>
+              </div>
+            </article>
+            <!-- service card 8 -->
+            <article
+              class="card rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-5"
+            >
+              <div class="flex items-start justify-between">
+                <div
+                  class="bg-[#DFEFFF] h-16 w-16 grid place-items-center rounded-lg"
+                >
+                  <div class="grid h-10 w-10 place-items-center rounded-lg">
+                    <img src="https://images.seeklogo.com/logo-png/31/1/brac-logo-png_seeklogo-313020.png" alt="Emergency Icon" />
+                  </div>
+                </div>
+                <button
+                  class="heart-btn grid h-10 w-10 place-items-center rounded-lg text-black"
+                >
+                  <span class="heart-icon text-[30px] leading-none">♡</span>
+                </button>
+              </div>
+              <h3
+                class="mt-3 font-bold"
+                style="
+                  font-family: 'Hind Madurai', sans-serif;
+                  font-size: 24px;
+                  color: rgba(17, 17, 17, 1);
+                "
+              >
+                Brac Helpline
+              </h3>
+              <p class="text-sm text-gray-500">Brac</p>
+              <div
+                class="service-number mt-3 text-3xl font-extrabold tracking-tight"
+                style="color: rgba(17, 17, 17, 1); font-size: 24px"
+              >
+                16445
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full text-xs px-2 py-0.5"
+                  style="
+                    background-color: rgba(242, 242, 242, 1);
+                    color: rgba(92, 92, 92, 1);
+                  "
+                  >NGO</span
+                >
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <button
+                  class="copy-btn inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+                  style="color: rgba(92, 92, 92, 1)"
+                >
+                  ⧉ Copy
+                </button>
+                <a
+                  href="#"
+                  class="call-btn inline-flex items-center justify-center rounded-lg text-white px-3 py-2 text-sm font-medium hover:bg-[#059c3a]"
+                  style="background-color: rgba(0, 166, 62, 1)"
+                >
+                  <i class="fa-solid fa-phone mr-1"></i>
+
+                  Call
+                </a>
+              </div>
+            </article>
+            <!-- service card 9 -->
+            <article
+              class="card rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-5"
+            >
+              <div class="flex items-start justify-between">
+                <div
+                  class="bg-[#DFEFFF] h-16 w-16 grid place-items-center rounded-lg"
+                >
+                  <div class="grid h-10 w-10 place-items-center rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2021/2021941.png" alt="Emergency Icon" />
+                  </div>
+                </div>
+                <button
+                  class="heart-btn grid h-10 w-10 place-items-center rounded-lg text-black"
+                >
+                  <span class="heart-icon text-[30px] leading-none">♡</span>
+                </button>
+              </div>
+              <h3
+                class="mt-3 font-bold"
+                style="
+                  font-family: 'Hind Madurai', sans-serif;
+                  font-size: 24px;
+                  color: rgba(17, 17, 17, 1);
+                "
+              >
+                Bangladesh Railway Helpline
+              </h3>
+              <p class="text-sm text-gray-500">Bangladesh Railway</p>
+              <div
+                class="service-number mt-3 text-3xl font-extrabold tracking-tight"
+                style="color: rgba(17, 17, 17, 1); font-size: 24px"
+              >
+                163
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full text-xs px-2 py-0.5"
+                  style="
+                    background-color: rgba(242, 242, 242, 1);
+                    color: rgba(92, 92, 92, 1);
+                  "
+                  >Travel</span
+                >
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <button
+                  class="copy-btn inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+                  style="color: rgba(92, 92, 92, 1)"
+                >
+                  ⧉ Copy
+                </button>
+                <a
+                  href="#"
+                  class="call-btn inline-flex items-center justify-center rounded-lg text-white px-3 py-2 text-sm font-medium hover:bg-[#059c3a]"
+                  style="background-color: rgba(0, 166, 62, 1)"
+                >
+                  <i class="fa-solid fa-phone mr-1"></i>
+
+                  Call
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- RIGHT: call history sidebar -->
+        <aside
+          id="service_box_right"
+          class="col-span-12 lg:col-span-3 bg-white"
+        >
+          <div
+            class="rounded-xl bg-white ring-1 ring-gray-200 p-4 sm:p-5 lg:sticky lg:top-6"
+          >
+            <div class="flex items-center justify-between">
+              <h4
+                class="font-semibold"
+                style="font-family: 'Hind Madurai', sans-serif"
+              >
+                <i class="fas fa-history"></i>
+                Call History
+              </h4>
+              <button
+                id="clear-history"
+                class="rounded-full text-white px-3 py-1 text-sm hover:bg-[#059c3a]"
+                style="background-color: rgba(0, 166, 62, 1)"
+              >
+                Clear
+              </button>
+            </div>
+
+            <!-- Call History Items -->
+            <ul class="mt-4 space-y-3" id="call-history-list">
+              <!-- <li
+                class="flex items-center justify-between rounded-lg bg-gray-50 p-3"
+              >
+                <div>
+                  <div
+                    class="font-semibold text-[18px] leading-normal tracking-normal"
+                  >
+                    Fire Service Number
+                  </div>
+                  <div class="text-xs text-gray-500 mt-3">999</div>
+                </div>
+                <div class="text-xs text-gray-500">11:36 AM</div>
+              </li> -->
+
+              <!-- add more history items as needed -->
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
