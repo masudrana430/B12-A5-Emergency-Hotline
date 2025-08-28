@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const cardsContainer = document.querySelector(".service_item_left"); // all cards live here
     const copyCountEl = document.getElementById("copy-count");
+    if (!cardsContainer) return;
 
     // copy text to clipboard 
     async function copyToClipboard(text) {
@@ -142,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsContainer.addEventListener("click", async (e) => {
         const card = e.target.closest("article.card");
         const number = card.querySelector(".service-number")?.textContent.trim() || "";
+        await copyToClipboard(number);                 
         // current copy count
         let copyCount = Number(copyCountEl?.textContent || 0);
         // COPY button
