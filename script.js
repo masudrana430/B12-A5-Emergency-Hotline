@@ -74,7 +74,7 @@ for (let copyButton of copyBtns) {
         console.log(serviceNumberByCopy);
 
         // alert / proceed with copying
-        alert(`📞 Copying ${serviceNameByCopy} (${serviceNumberByCopy})`);
+        alert(`📋 Copying ${serviceNameByCopy} (${serviceNumberByCopy})`);
 
         // do the copy
         copyToClipboard(serviceNumberByCopy);
@@ -114,7 +114,7 @@ for (let callButton of callBtns) {
         // check & deduct coins FIRST
         const coins = getCoins();
         if (coins < 20) {
-            alert("You don't have enough coins. You need 20 coins per call.");
+            alert("❌ You don't have enough coins. You need 20 coins per call.");
             return;
         }
         setCoins(coins - 20);
