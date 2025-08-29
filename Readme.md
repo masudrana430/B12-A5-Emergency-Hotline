@@ -1,4 +1,6 @@
 6. Answer the following questions clearly:
+
+
 What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 ans:
 getElementById means select element by id 
